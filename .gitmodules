@@ -1,0 +1,4 @@
+[submodule "tutorials/nodejs-mongodb-hapi-graphql-swagger-api"]
+	path = tutorials/nodejs-mongodb-hapi-graphql-swagger-api
+	url = git@github.com:laseryuan/tutorial-hub
+	branch = nodejs-mongodb-hapi-graphql-swagger-api
