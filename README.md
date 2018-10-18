@@ -7,7 +7,7 @@ https://medium.freecodecamp.org/how-to-setup-a-powerful-api-with-nodejs-graphql-
       --net=host --pid=host \
       --name=tutorial-hub \
       lasery/tutorial-hub:nodejs-mongodb-hapi-graphql-swagger-api \
-      node index.js
+      npm start
     ```
 1. Open browser
 http://localhost:4000
