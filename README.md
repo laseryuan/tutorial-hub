@@ -23,3 +23,15 @@ http://localhost:4000/api/v1/paintings
       "techniques": ["Portrait"]
     }
     ```
+
+1. Open Graphiql
+http://localhost:4000/graphiql
+    ```
+    {
+      painting(id:"5bcbd77c72e28648f9b28d61") {
+        name
+        url
+        technique
+      }
+    }
+    ```
