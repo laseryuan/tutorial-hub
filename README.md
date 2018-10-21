@@ -10,5 +10,16 @@ https://medium.freecodecamp.org/how-to-setup-a-powerful-api-with-nodejs-graphql-
       lasery/tutorial-hub:nodejs-mongodb-hapi-graphql-swagger-api \
       npm start
     ```
+
 1. Open browser
 http://localhost:4000
+
+1. Access api
+http://localhost:4000/api/v1/paintings
+    ```
+    {
+      "name": "Mona Lisa",
+      "url": "https://en.wikipedia.org/wiki/Mona_Lisa#/media/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+      "techniques": ["Portrait"]
+    }
+    ```
