@@ -35,3 +35,6 @@ http://localhost:4000/graphiql
       }
     }
     ```
+
+1. Swagger Documentation
+http://localhost:4000/documentation

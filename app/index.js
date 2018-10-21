@@ -81,6 +81,10 @@ const init = async () => {
     {
       method: 'GET',
       path: '/api/v1/paintings',
+      config: {
+        description: 'Get all the paintings',
+        tags: ['api', 'v1', 'painting']
+      },
       handler: (req, reply) => {
         return Painting.find();
       }
@@ -88,6 +92,10 @@ const init = async () => {
     {
       method: 'POST',
       path: '/api/v1/paintings',
+      config: {
+        description: 'Get a specific painting by ID.',
+        tags: ['api', 'v1', 'painting']
+      },
       handler: (req, reply) => {
         const { name, url, technique } = req.payload;
         const painting = new Painting({
