@@ -4,6 +4,7 @@ https://medium.freecodecamp.org/how-to-setup-a-powerful-api-with-nodejs-graphql-
     ```
     docker run --rm -it \
       -v $PWD/app:/usr/src/app \
+      --env-file ../../admin/env.list \
       --net=host --pid=host \
       --name=tutorial-hub \
       lasery/tutorial-hub:nodejs-mongodb-hapi-graphql-swagger-api \
