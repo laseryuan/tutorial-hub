@@ -28,9 +28,23 @@ $TUTORIAL_NAME
 ```
 
 # Include the branches to master branch as submodules
-```
-git submodule add -b $TUTORIAL_NAME git@github.com:laseryuan/tutorial-hub tutorials/$TUTORIAL_NAME
-```
+1. Clone the empty branch as a submodule
+    ```
+    git submodule add -b empty git@github.com:laseryuan/tutorial-hub tutorials/$TUTORIAL_NAME
+    ```
+
+1. Change the endpoint to new branch
+    ```
+    vim .gitmodules
+    branch = $TUTORIAL_NAME
+    ```
+
+1. Rename the "empty" branch to the new branch
+    ```
+    cd tutorials/$TUTORIAL_NAME
+    git branch -m empty $TUTORIAL_NAME
+    git push origin $TUTORIAL_NAME
+    ```
 
 # Fix a commit
 1. Identify the commit BEFORE the changes happen

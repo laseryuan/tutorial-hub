@@ -2,3 +2,11 @@
 	path = tutorials/nodejs-mongodb-hapi-graphql-swagger-api
 	url = git@github.com:laseryuan/tutorial-hub
 	branch = nodejs-mongodb-hapi-graphql-swagger-api
+[submodule "tutorials/graphql-firebase"]
+	path = tutorials/graphql-firebase
+	url = git@github.com:laseryuan/tutorial-hub
+	branch = graphql-firebase
+[submodule "tutorials/vuejs-firebase-auth"]
+	path = tutorials/vuejs-firebase-auth
+	url = git@github.com:laseryuan/tutorial-hub
+	branch = vuejs-firebase-auth
