@@ -29,3 +29,5 @@ https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-fire
     rm -rf .git # Use .git in dockerfile directory
     ```
     http://localhost:8080
+
+# Login and Sign Up
