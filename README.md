@@ -31,3 +31,5 @@ https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-fire
     http://localhost:8080
 
 # Login and Sign Up
+    http://localhost:8080/#/login
+    http://localhost:8080/#/sign-up
