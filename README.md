@@ -20,5 +20,12 @@ https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-fire
       --net=host --pid=host \
       --name=tutorial-hub \
       lasery/tutorial-hub:vuejs-firebase-auth \
-      npm start
+      npm run serve
     ```
+
+1. Install Vuejs
+    ```
+    vue create . # Select router feature
+    rm -rf .git # Use .git in dockerfile directory
+    ```
+    http://localhost:8080
