@@ -33,39 +33,34 @@ git submodule add -b $TUTORIAL_NAME git@github.com:laseryuan/tutorial-hub tutori
 ```
 
 # Fix a commit
-1. Identify the commit needs to be fixed
+1. Identify the commit BEFORE the changes happen
     ```
     Gblame
     ```
 
+1. (optional) Backup
+    ```
+    git branch -D bak
+    git checkout -b bak
+    git checkout $TUTORIAL_NAME
+    ```
+
 1. Checkout the target commit
     ```
-    git branch
-    git branch -D fix
-    git log
-
-    git checkout -b bak
-    git checkout -b fix :/\
+    git rebase -i :/\
     {commit}
 
-    git log
     ```
+    mark the target commit as "edit"
 
 1. Make modification
     ```
+    git add -u
     git commit --amend
+    git rebase --continue
     ```
 
-1. Rebase to the target branch
-    ```
-    git checkout -f \
-    $TUTORIAL_NAME
-
-    git rebase -i fix
-    drop duplicated commit if needed: drop {commit}
-    ```
-
-1. Compare with remote and push
+1. Verify the changes
     ```
     git diff origin/$TUTORIAL_NAME
     git push --force
