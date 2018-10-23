@@ -34,3 +34,9 @@ https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-fire
 http://localhost:8080/login  
 http://localhost:8080/hello  
 http://localhost:8080/sign-up  
+
+1. Install Firebase
+    ```
+    npm install --save firebase
+    ```
+    https://console.firebase.google.com
