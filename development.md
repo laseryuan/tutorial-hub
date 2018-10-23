@@ -43,11 +43,11 @@ $TUTORIAL_NAME
     ```
     cd tutorials/$TUTORIAL_NAME
     git branch -m empty $TUTORIAL_NAME
-    git push origin $TUTORIAL_NAME
+    git push -u origin $TUTORIAL_NAME
     ```
 
 # Fix a commit
-1. Identify the commit BEFORE the changes happen
+1. Identify the {commit} when the changes happen
     ```
     Gblame
     ```
@@ -61,8 +61,8 @@ $TUTORIAL_NAME
 
 1. Checkout the target commit
     ```
-    git rebase -i :/\
-    {commit}
+    git rebase -i \
+    {commit}^
 
     ```
     mark the target commit as "edit"
