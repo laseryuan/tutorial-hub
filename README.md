@@ -40,3 +40,6 @@ http://localhost:8080/sign-up
     npm install --save firebase
     ```
     https://console.firebase.google.com
+
+1. SignUp with email
+Enalbe "Email/Password" in Firbase console
