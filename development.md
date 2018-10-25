@@ -4,9 +4,6 @@
     export TUTORIAL_NAME=\
     {new-tutorial}
 
-    git checkout --orphan \
-    $TUTORIAL_NAME
-
     echo $TUTORIAL_NAME
     ```
 
@@ -70,12 +67,13 @@ $TUTORIAL_NAME
 1. Make modification
     ```
     git add -u
-    git commit --amend
+    git commit --amend # no need when resolving conflict. just continue to the next step
     git rebase --continue
     ```
 
 1. Verify the changes
     ```
+    git log
     git diff origin/$TUTORIAL_NAME
     git push --force
     ```
