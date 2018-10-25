@@ -23,3 +23,9 @@ https://medium.com/@aas2015001/create-a-dapp-decentralized-application-with-dock
       lasery/tutorial-hub:truffle-ganache \
       bash
     ```
+
+1. Boilerplate with Truffle box
+    ```
+    rm *
+    truffle unbox pet-shop
+    ```
