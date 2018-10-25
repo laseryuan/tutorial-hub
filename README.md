@@ -35,3 +35,9 @@ https://medium.com/@aas2015001/create-a-dapp-decentralized-application-with-dock
     truffle develop # It starts a ganache-cli in background
     migrate
     ```
+
+1. Access the contract thrugh truffle console
+    ```
+    Election.deployed().then(function(instance) { app = instance })
+    app.candidate()
+    ```
