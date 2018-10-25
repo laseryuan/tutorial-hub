@@ -29,3 +29,9 @@ https://medium.com/@aas2015001/create-a-dapp-decentralized-application-with-dock
     rm *
     truffle unbox pet-shop
     ```
+
+1. Deploy contract
+    ```
+    truffle develop # It starts a ganache-cli in background
+    migrate
+    ```
