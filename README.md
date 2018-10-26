@@ -47,3 +47,8 @@ https://medium.com/@aas2015001/create-a-dapp-decentralized-application-with-dock
 
     app.candidatesCount()
     ```
+
+1. Testing
+    ```
+    test
+    ```
