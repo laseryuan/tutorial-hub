@@ -52,3 +52,14 @@ https://medium.com/@aas2015001/create-a-dapp-decentralized-application-with-dock
     ```
     test
     ```
+
+1. Run app client
+    ```
+    docker exec -it tutorial-hub bash
+    npm run dev
+    ```
+    http://127.0.0.1:3000
+
+1. MetaMast import seed
+RPC endpoint: http://127.0.0.1:9545
+Seed: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
