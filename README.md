@@ -31,3 +31,8 @@ https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package
     ```
     npm run build
     ```
+
+1. Add Prettier and TsLint
+    ```
+    npm install --save-dev prettier tslint tslint-config-prettier
+    ```
