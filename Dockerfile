@@ -8,7 +8,7 @@ RUN chown node:node /usr/src/app
 RUN mkdir /usr/src/node_modules
 RUN chown node:node /usr/src/node_modules
 
-# RUN npm install -g {global_packages}
+RUN npm install -g create-react-app
 
 USER node
 
