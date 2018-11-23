@@ -47,3 +47,8 @@ https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package
     ```
     npm install --save-dev jest ts-jest @types/jest
     ```
+
+1. Run Test
+    ```
+    npm test
+    ```
