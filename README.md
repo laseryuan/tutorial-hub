@@ -42,3 +42,8 @@ https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package
     npm run lint
     npm run format
     ```
+
+1. Add Jest
+    ```
+    npm install --save-dev jest ts-jest @types/jest
+    ```
