@@ -26,3 +26,8 @@ https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package
     ```
     npm install --save-dev typescript
     ```
+
+1. Build Typescript
+    ```
+    npm run build
+    ```
