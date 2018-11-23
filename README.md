@@ -26,3 +26,9 @@ https://hackernoon.com/api-testing-with-jest-d1ab74005c0a
     ```
     create-react-app .
     ```
+
+1. Run the test
+    ```
+    docker exec -it tutorial-hub bash
+    npm test
+    ```
