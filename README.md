@@ -21,3 +21,8 @@ https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package
       lasery/tutorial-hub:npm-typescript-tslint-prettier-jest \
       bash
     ```
+
+1. Add Typescript
+    ```
+    npm install --save-dev typescript
+    ```
