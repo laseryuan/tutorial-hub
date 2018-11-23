@@ -63,3 +63,10 @@ https://medium.com/@aas2015001/create-a-dapp-decentralized-application-with-dock
 1. MetaMast import seed
 RPC endpoint: http://127.0.0.1:9545
 Seed: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
+
+1. Debug
+    ```
+    npm install --save-dev locus
+    node --inspect=9222 $(which truffle) develop
+    node --inspect $(which truffle) develop
+    ```
