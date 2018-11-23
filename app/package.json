@@ -1,8 +1,9 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A nice greeter",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^23.3.9",
