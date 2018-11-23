@@ -52,3 +52,21 @@ https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package
     ```
     npm test
     ```
+
+# Publish to NPM
+1. Create new NPM user and login
+    ```
+    npm adduser
+    npm login
+    ```
+
+1. Publish package
+    ```
+    npm publish --access public
+    ```
+
+1. Bumping a new version
+    ```
+    npm version patch
+    npm publish --access public
+    ```
