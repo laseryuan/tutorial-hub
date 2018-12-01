@@ -43,6 +43,12 @@ $TUTORIAL_NAME
     git push -u origin $TUTORIAL_NAME
     ```
 
+1. Add the submodule to master branch
+    ```
+    cd ~/projects/tutorial-hub
+    git add tutorials/$TUTORIAL_NAME
+    ```
+
 # Fix a commit
 1. Identify the {commit} when the changes happen
     ```

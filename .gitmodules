@@ -10,3 +10,11 @@
 	path = tutorials/truffle-ganache
 	url = git@github.com:laseryuan/tutorial-hub
 	branch = truffle-ganache
+[submodule "tutorials/jest-api-mock"]
+	path = tutorials/jest-api-mock
+	url = git@github.com:laseryuan/tutorial-hub
+	branch = jest-api-mock
+[submodule "tutorials/npm-typescript-tslint-prettier-jest"]
+	path = tutorials/npm-typescript-tslint-prettier-jest
+	url = git@github.com:laseryuan/tutorial-hub
+	branch = npm-typescript-tslint-prettier-jest
