@@ -1,1 +1,5 @@
 image: lasery/gitpod-workspace-full:latest
+
+github:
+  prebuilds:
+    branches: true
