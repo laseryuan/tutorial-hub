@@ -3,7 +3,6 @@ USER root
 RUN chown root:root -R /home/ride
 
 FROM gitpod/workspace-full:latest
-# FROM timbru31/ruby-node
 
 # Gitpod: start
 USER root
