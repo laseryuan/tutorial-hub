@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- 8
+script:
+- cd functions
+- npm install
+- npm run lint
+- npm run test
+- cd ..
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  on:
+    branch: travis-gcloud-function-firebase
+  token:
+    secure: cgRxB5/BGV3RA7IGD+IrVzA3mTP7Coolk4wPCdtzHOQWpQV2XYqcgW+OZnHrg4/3P+GZ8DyXzQPztCp77gAsf6bGM4rQfXs+2MHJORU6XFvST+D7kzV/szAumT0Hzc/VlnLRp+nLseTDG2TRxJ1QvPPpotpWZIBlmCHasVDBB9QOv3BvEfQkG09A2Vf+l83IoRW8rWu9mx7ekv2P/508hcoz7AoTj0wzv/yVQk/aL+3zY2VuD2qGys5xUJYbTs4rJidpTsSdaYG1iOFXxiVqWevPauB+CY9FwViLrAgMUHdnGk6esJ6NvIgWyIwgKwjJ83bfPja7oLIfZEE0IdCwwjEZmdWnaExosVV9XWvXwSTUub8UOUVNcCYmHSIF5Kml7udl4uPnzcX12jZHSpHDI7QJEYBJs2528lOhnbnRivLcTzT7P2PwFZCULkq6eUNuXcefkCPuD8y7fShZ+S8MZ0CNxn5XdYUabQ2Gqk8JX8avPwmC8JKV4oa/IZgnYuhN32YGkqbu+vpGdlEDWB5BAoDyivkwPXQSRdOSOj9IrL7s7hHCU7YjTl3ZG4Hi7bAf3PietxOPNakLB/INm1POA0KgdeKeOZra/uKfbhx271OCkwb+xTKf5kpAZ9w6e7KwkUZddmLP3sM8Qixm6eTo/HEyrAE5DT9sSod6JcmO3QU=

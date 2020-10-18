@@ -4,14 +4,22 @@
 
 [Firebase Cloud Functions development environment in Gitpod](https://somegeeky.website/2020/05/12/firebase-cloud-functions-environment-in-gitpod/)
 
-## Get firebase auth token for CI
-In google cloud shell:
+## Get firebase auth token for CI (for the first time)
+In google cloud shell
 ```
 firebase login:ci --no-localhost
+gp env -e FIREBASE_TOKEN=\
 ```
 
-## Install Travis
+Load environment variables
 ```
-export GEM_HOME=/usr/local/bundle
-export PATH="$PATH:$GEM_HOME/bin"
+eval $(gp env -e)
+echo $FIREBASE_TOKEN
+```
+
+## Config Travis (for the first time)
+Activate repository on https://travis-ci.com/
+```
+travis login --com
+travis encrypt $FIREBASE_TOKEN --add
 ```
