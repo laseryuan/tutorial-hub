@@ -33,6 +33,16 @@ travis encrypt FIREBASE_TOKEN="${FIREBASE_TOKEN}" --add
 
 [Embedding status images](https://docs.travis-ci.com/user/status-images/)
 
+## Test
+Offline test
+```
+npm test
+```
+
+TODO: Online test
+```
+```
+
 ## Manual deploy
 ```
 cd functions
