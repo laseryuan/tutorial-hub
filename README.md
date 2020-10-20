@@ -3,7 +3,7 @@
 
 [Cloud Functions CI/CD with Travis CI](https://medium.com/@diogopires_55864/cloud-functions-ci-cd-with-travis-ci-107415f692fb)
 
-[Firebase SDK for Cloud Functions Quickstart - HTTPS trigger](https://github.com/firebase/functions-samples/tree/master/quickstarts/time-server)
+[Firebase SDK for Cloud Functions Quickstart - Realtime Database](https://github.com/firebase/functions-samples/tree/master/quickstarts/uppercase)
 
 [Firebase Cloud Functions development environment in Gitpod](https://somegeeky.website/2020/05/12/firebase-cloud-functions-environment-in-gitpod/)
 
