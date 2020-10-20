@@ -40,5 +40,5 @@ npm install
 npm run lint
 cd ..
 
-firebase deploy --token ${FIREBASE_TOKEN}
+firebase deploy --token ${FIREBASE_TOKEN} --only functions:date
 ```
