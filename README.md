@@ -33,6 +33,11 @@ travis encrypt FIREBASE_TOKEN="${FIREBASE_TOKEN}" --add
 
 [Embedding status images](https://docs.travis-ci.com/user/status-images/)
 
+## Debug
+```
+npm install locus --save-dev
+```
+
 ## Test
 Offline test
 ```
