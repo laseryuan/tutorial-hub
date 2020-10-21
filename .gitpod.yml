@@ -7,7 +7,10 @@ github:
     branches: true
 
 tasks:
-  - prebuild: gem install travis
+  - prebuild: |
+      gem install travis
+      cd functions
+      npm install
     command: |
       ln -s /tmp/gitpod/.vim /home/gitpod/.vim
       ln -s /tmp/gitpod/.vim/vimrc /home/gitpod/.vimrc
