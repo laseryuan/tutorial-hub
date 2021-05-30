@@ -1,5 +1,5 @@
 # Create new branch for a tutorial
-1. Create new empty branch
+1. Set tutorial name
     ```
     export TUTORIAL_NAME=\
     {new-tutorial}
@@ -7,10 +7,11 @@
     echo $TUTORIAL_NAME
     ```
 
-1. Clear workspace
+1. Create new branch from the empty branch
     ```
-    git reset --hard
-    git clean -df
+    git checkout empty
+    git checkout -b $TUTORIAL_NAME
+    git push -u origin $TUTORIAL_NAME
     ```
 
 # Update branch
