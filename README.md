@@ -1,20 +1,43 @@
-# "Uploading files to Google Cloud Storage using a Flask API" – Example App
+https://paulgoetze.medium.com/uploading-files-to-google-cloud-storage-using-a-flask-api-part-1-7a4e379911d7
 
-This is the example app for our 3-part post series on Medium:
+Database
+```
+docker rm -f flask_mysql
 
- * [Part 1](https://medium.com/p/7a4e379911d7?source=friends_link&sk=dd460418de3d1829c056db5c069f9b6d): basic app setup, configuring testing & production filedepots (see [part-1](https://github.com/paulgoetze/flask-gcs-upload-example-app/tree/part-1) branch)
- * [Part 2](https://medium.com/p/6b203a0e392c?source=friends_link&sk=e7274af2488285dd51756d81de9cf671): testing and implementing the User model & file upload endpoint (see [part-2](https://github.com/paulgoetze/flask-gcs-upload-example-app/tree/part-2) branch)
- * [Part 3](https://medium.com/p/897c302916e7?source=friends_link&sk=e9fca9639697051be296c140932884e0): customising the upload & allowing multiple depots (see [part-3](https://github.com/paulgoetze/flask-gcs-upload-example-app/tree/part-3) branch)
+docker run \
+  --network="${RIDE_NETWORK}" \
+  -d \
+  --name=flask_mysql \
+  -v mysql-data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=slimdingo85 \
+  -e MYSQL_DATABASE=flask \
+  -e MYSQL_USER=flask \
+  -e MYSQL_PASSWORD=slimdingo85 \
+  mysql:5.7
 
+docker start flask_mysql
+```
 
-## Running the App
+```
+run_image -d python:3.10 bash
+docker rename run_image flask-gcs
 
-In order to run the Flask app:
+docker exec -u root -it flask-gcs bash
+pip install pipenv mysqlclient ipdb
 
-* make sure you have Python v3.10+ and [pipenv](https://pipenv.pypa.io/en/latest/install/#installing-pipenv) installed
-* run `pipenv install` to install the dependencies
-* run `pipenv shell` to activate the projects virtualenv
-* copy `my_app/config/app_config.py.sample` to `my_app/config/app_config.py` and adjust the config variables to your needs
-* run `FLASK_APP=my_app flask db upgrade` to init the configured database
-* run `FLASK_APP=my_app flask run` to start the local server
-* run `pytest` to run the test suite
+docker exec -it flask-gcs bash
+pipenv install
+
+docker start flask-gcs
+pipenv shell
+
+flask --help
+
+FLASK_APP=my_app flask db upgrade
+
+FLASK_APP=my_app flask run --host=0.0.0.0
+curl http://flask-gcs:5000/users
+
+pytest -s
+pkill pytest
+```

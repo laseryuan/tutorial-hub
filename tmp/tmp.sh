@@ -1,34 +1,21 @@
-git clone https://github.com/paulgoetze/flask-gcs-upload-example-app.git
-run_image -d python:3.10 bash
-docker rename run_image flask-gcs
+SQLALCHEMY_DATABASE_URI="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@flask_mysql/${MYSQL_DATABASE}"
+echo $SQLALCHEMY_DATABASE_URI
 
-# docker exec -u root -it python bash
-docker exec -u root -it flask-gcs bash
-pip install pipenv
-pip install mysqlclient
+pipenv update --dry-run
+pipenv graph
+pipenv install Flask-SQLAlchemy==
+pipenv install Flask-SQLAlchemy==3.0.2
+pipenv install SQLAlchemy==
+pipenv install Flask-SQLAlchemy==2.5.1
+pipenv install SQLAlchemy==1.4.44
+pipenv install filedepot==
+pipenv graph | grep depot
+pipenv install flask==
+pipenv graph | grep Flask
 
-docker exec -it flask-gcs bash
+pytest
+pytest -s -k 'test_get_all_users'
 pipenv install
 pipenv shell
 
-flask --help
-
-docker rm -f flask_mysql
-
-docker run \
-  --network="${RIDE_NETWORK}" \
-  -d \
-  --name=flask_mysql \
-  -v mysql-data:/var/lib/mysql \
-  -e MYSQL_ROOT_PASSWORD=slimdingo85 \
-  -e MYSQL_DATABASE=flask \
-  -e MYSQL_USER=flask \
-  -e MYSQL_PASSWORD=slimdingo85 \
-  mysql:5.7
-
-FLASK_APP=my_app flask db upgrade
-
-FLASK_APP=my_app flask run --host=0.0.0.0
-curl http://flask-gcs:5000
-
-pytest
+werkzeug== 2.0,3
