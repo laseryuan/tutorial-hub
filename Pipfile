@@ -19,6 +19,7 @@ webargs = "*"
 marshmallow-jsonapi = "*"
 pytest = "*"
 pillow = "*"
+shillelagh = {extras = ["all"], version = "*"}
 
 [requires]
 python_version = "3.10"

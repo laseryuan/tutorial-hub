@@ -1,6 +1,8 @@
 SQLALCHEMY_DATABASE_URI="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@flask_mysql/${MYSQL_DATABASE}"
 echo $SQLALCHEMY_DATABASE_URI
 
+docker exec -it flask-gcs bash
+
 pipenv update --dry-run
 pipenv graph
 pipenv install Flask-SQLAlchemy==
@@ -15,7 +17,9 @@ pipenv graph | grep Flask
 
 pytest
 pytest -s -k 'test_get_all_users'
+pytest -s -k 'test_create_a_user'
+client
 pipenv install
 pipenv shell
 
-werkzeug== 2.0,3
+FLASK_APP=my_app flask db upgrade

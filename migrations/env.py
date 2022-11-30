@@ -72,6 +72,17 @@ def run_migrations_online():
                 directives[:] = []
                 logger.info('No changes in schema detected.')
 
+    #  service_account_file='tmp/service_account.json'
+
+    #  config_section = config.get_section(config.config_ini_section)
+    #  config_section["sqlalchemy.url"] = "gsheets://"
+    #  connectable = engine_from_config(
+        #  config_section,
+        #  prefix='sqlalchemy.',
+        #  poolclass=pool.NullPool,
+        #  service_account_file = service_account_file,
+    #  )
+
     connectable = engine_from_config(
         config.get_section(config.config_ini_section),
         prefix='sqlalchemy.',
