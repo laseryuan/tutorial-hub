@@ -12,6 +12,7 @@ engine = create_engine(
     "gsheets://",
     catalog={
         "users": sheet_url,
+        "alembic_version": 'https://docs.google.com/spreadsheets/d/1oUciQ7VYIJ1RVdsPHm0E5hMeNAbvjfyv_Lj0gKYwgpY/edit#gid=148468830'
     },
     echo=True,
     service_account_file = service_account_file,
@@ -20,6 +21,13 @@ connection = engine.connect()
 query = "SELECT * FROM users"
 for row in connection.execute(query):
     print(row)
+
+query = "INSERT INTO alembic_version (version_num) VALUES ('5b5edadb5f5f')"
+connection.execute(query)
+
+from sqlalchemy import *
+inspector = inspect(connection)
+print(inspector.get_table_names())
 
 #  Declare a Mapping
 from sqlalchemy.orm import declarative_base

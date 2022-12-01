@@ -7,6 +7,13 @@ from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
+from alembic.ddl import impl
+
+class GsheetsDialect(impl.DefaultImpl):
+    __dialect__ = 'gsheets'
+    transactional_ddl = False
+
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -72,22 +79,13 @@ def run_migrations_online():
                 directives[:] = []
                 logger.info('No changes in schema detected.')
 
-    #  service_account_file='tmp/service_account.json'
-
-    #  config_section = config.get_section(config.config_ini_section)
-    #  config_section["sqlalchemy.url"] = "gsheets://"
-    #  connectable = engine_from_config(
-        #  config_section,
-        #  prefix='sqlalchemy.',
-        #  poolclass=pool.NullPool,
-        #  service_account_file = service_account_file,
-    #  )
-
     connectable = engine_from_config(
         config.get_section(config.config_ini_section),
         prefix='sqlalchemy.',
         poolclass=pool.NullPool,
+        **current_app.config.get('SQLALCHEMY_ENGINE_OPTIONS')
     )
+
 
     with connectable.connect() as connection:
         context.configure(
