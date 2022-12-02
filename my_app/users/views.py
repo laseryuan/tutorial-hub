@@ -43,12 +43,16 @@ def get_user(user_id):
 
 
 @users.route('', methods=['POST'])
-@use_args({'email': fields.Str(required=True)})
+@use_args({
+  'id': fields.Int(required=True),
+  'email': fields.Str(required=True),
+  })
 def create_user(args):
     """Create a new user"""
 
+    id = args.get('id')
     email = args.get('email')
-    user = User(email=email)
+    user = User(id=id, email=email)
     db.session.add(user)
 
     try:

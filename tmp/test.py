@@ -1,19 +1,16 @@
-pip install requests
-
-python
 import requests
 import json
+
+response = requests.get('http://flask-shillelagh:5000/users')
 
 email = 'user@example.com'
 email = 'user1@example.com'
 
 response = requests.post(
-    'http://flask-gcs:5000/users',
-    json={'email': email},
+    'http://flask-shillelagh:5000/users',
+    json={'id': 2, 'email': email},
 )
 
-data = response.json
-
-response = requests.get('http://flask-gcs:5000/users')
-
 response.text
+
+data = response.json

@@ -88,6 +88,7 @@ def run_migrations_online():
 
 
     with connectable.connect() as connection:
+        from IPython import embed; embed(colors="neutral")
         context.configure(
             connection=connection,
             target_metadata=target_metadata,
