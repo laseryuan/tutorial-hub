@@ -153,7 +153,7 @@ def test_create_a_user(client):
     email = 'user@example.com'
     response = client.post(
         '/users',
-        data=json.dumps({'email': email}),
+        data=json.dumps({'id': 1, 'email': email}),
         content_type='application/json',
     )
     data = response.json
@@ -168,7 +168,7 @@ def test_create_a_duplicate_user(user, client):
 
     response = client.post(
         '/users',
-        data=json.dumps({'email': user.email}),
+        data=json.dumps({'id': 2, 'email': user.email}),
         content_type='application/json'
     )
 

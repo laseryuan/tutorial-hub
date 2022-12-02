@@ -27,7 +27,7 @@ def configure_test_db(app: App):
     db_path = path.dirname(path.abspath(__file__))
     test_db = 'sqlite:///{}/test.db'.format(db_path)
     app.config['SQLALCHEMY_DATABASE_URI'] = test_db
-
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {}
 
 @pytest.fixture(scope='session')
 def db(app: App):

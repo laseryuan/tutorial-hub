@@ -22,9 +22,6 @@ pipenv graph | grep depot
 pipenv install flask==
 pipenv graph | grep Flask
 
-pytest
-pytest -s -k 'test_get_all_users'
-pytest -s -k 'test_create_a_user'
 client
 pipenv install
 pipenv shell
