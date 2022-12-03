@@ -17,6 +17,25 @@ response = requests.put(
     json={'email': email},
 )
 
+
+headers = {
+    'Content-Type': 'multipart/form-data',
+}
+
+file_path = 'tests/support/fixtures/test.png'
+f = open(file_path, 'rb')
+f.close()
+
+files = {
+    "avatar" : ("avatar_file.png", open(file_path, "rb"), "image/png"),
+    #  'avatar': open(file_path, 'rb'),
+}
+
+response = requests.post(
+    'http://flask-shillelagh:5000/users/1/avatar',
+    files=files
+)
+
 response.text
 
 data = response.json
