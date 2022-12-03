@@ -6,7 +6,7 @@ SQLALCHEMY_ENGINE_OPTIONS = {
         "users": 'https://docs.google.com/spreadsheets/d/10yf6SsnDcEcssTiL6LxuX1qpQbACZILUBe1rMo-aUq0/edit#gid=971141618',
     },
     "echo" : True,
-    "service_account_file" : 'tmp/service_account.json',
+    "service_account_file" : 'my_app/config/service_account.json',
 }
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 

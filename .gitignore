@@ -4,3 +4,4 @@ tests/*.db
 __pycache__
 .pytest_cache
 tmp/
+service_account.json

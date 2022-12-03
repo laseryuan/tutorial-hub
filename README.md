@@ -20,15 +20,15 @@ docker start flask_mysql
 
 ```
 run_image -d python:3.10 bash
-docker rename run_image flask-gcs
+docker rename run_image flask-gsheets-gcs
 
-docker exec -u root -it flask-gcs bash
-pip install pipenv mysqlclient ipdb
+docker exec -u root -it flask-gsheets-gcs bash
+pip install pipenv
 
-docker exec -it flask-gcs bash
+docker exec -it flask-gsheets-gcs bash
 pipenv install
 
-docker start flask-gcs
+docker start flask-gsheets-gcs
 pipenv shell
 
 flask --help
@@ -36,8 +36,9 @@ flask --help
 FLASK_APP=my_app flask db upgrade
 
 FLASK_APP=my_app flask run --host=0.0.0.0
-curl http://flask-gcs:5000/users
+curl http://flask-gsheets-gcs:5000/users
 
-pytest -s
-pkill pytest
+pytest
+pytest -s -k 'test_get_all_users'
 ```
+
