@@ -1,7 +1,6 @@
 .idea
-my_app/config/app_config.py
 tests/*.db
 __pycache__
 .pytest_cache
 tmp/
-service_account.json
+secrets/

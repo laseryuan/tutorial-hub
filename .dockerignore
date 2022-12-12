@@ -1,0 +1,15 @@
+**/.git
+Dockerfile
+README.md
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+
+# from .gitignore
+.idea
+tests/*.db
+__pycache__
+.pytest_cache
+tmp/
+secrets/

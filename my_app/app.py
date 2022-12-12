@@ -34,7 +34,7 @@ class App(Flask):
     def load_config(self):
         """Load the app's config from app_config.py"""
 
-        file_path = path.join(APP_ROOT, 'config', 'app_config.py')
+        file_path = path.join(APP_ROOT, 'config', 'secrets', '1', 'app_config.py')
         self.config.from_pyfile(file_path)
 
     def register_blueprints(self):
