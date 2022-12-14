@@ -1,0 +1,17 @@
+name: 'Send build request to gcloud run apps'
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT_GCLOUD_RUN_APP }}
+          repository: laseryuan/gcloud-run-apps
+          event-type: build-request-from-flask-gsheets 
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
