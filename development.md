@@ -1,3 +1,8 @@
+# Show all tutorials
+```
+git branch -r
+```
+
 # Create new branch for a tutorial
 1. Set tutorial name
     ```
