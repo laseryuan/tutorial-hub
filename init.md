@@ -1,27 +1,21 @@
 # Create new branch for a tutorial
-1. Create new empty branch
-```
-export TUTORIAL_NAME=\
-{new-tutorial}
+1. Set tutorial name
+    ```
+    export TUTORIAL_NAME=\
+    {new-tutorial}
 
-echo $TUTORIAL_NAME
-```
+    echo $TUTORIAL_NAME
+    ```
 
-1. Clear workspace
+1. Create new branch
 ```
 git checkout -b $TUTORIAL_NAME
-git push origin $TUTORIAL_NAME
+git push -u origin $TUTORIAL_NAME
 ```
 
 # Update branch
 ```
 git push --force
-```
-
-# Work on a tutorial:
-```
-git checkout \
-$TUTORIAL_NAME
 ```
 
 # Include the branches to master branch as submodules
@@ -34,13 +28,6 @@ $TUTORIAL_NAME
     ```
     vim .gitmodules
     branch = $TUTORIAL_NAME
-    ```
-
-1. Rename the "empty" branch to the new branch
-    ```
-    cd tutorials/$TUTORIAL_NAME
-    git branch -m empty $TUTORIAL_NAME
-    git push -u origin $TUTORIAL_NAME
     ```
 
 1. Add the submodule to master branch
@@ -83,4 +70,3 @@ $TUTORIAL_NAME
     git diff origin/$TUTORIAL_NAME
     git push --force
     ```
-
