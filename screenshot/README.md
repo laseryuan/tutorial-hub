@@ -64,3 +64,29 @@ gcloud beta run jobs execute screenshot
 ```
 gcloud beta run executions describe <EXECUTION_NAME>
 ```
+
+# Run locally
+* build image
+```
+docker build -t screenshot .
+```
+
+* prepare auth file
+```
+gcloud auth application-default login
+cp application_default_credentials.json ./tmp/
+sudo chown 999:999 ./tmp/application_default_credentials.json
+```
+
+* run locally
+```
+-it --entrypoint= \
+docker run \
+    -v $(get_host_pwd)/tmp/application_default_credentials.json:/tmp/application_default_credentials.json:ro \
+    -e GOOGLE_APPLICATION_CREDENTIALS=/tmp/application_default_credentials.json \
+    -e BUCKET_NAME=screenshot-$PROJECT_ID \
+    --cap-add=SYS_ADMIN `#puppeteer requirement` \
+    -e GCLOUD_PROJECT=${PROJECT_ID} \
+    screenshot \
+    "https://cloud.google.com"
+```
