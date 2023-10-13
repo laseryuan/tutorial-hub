@@ -2,8 +2,18 @@ https://www.digitalocean.com/community/tutorials/how-to-write-end-to-end-tests-i
 
 ## Initiating your Testing Program
 ```
-
 mkdir end-to-end-test-tutorial
 dev
-npm init
+npm -y init
+npm install --save jest puppeteer jest-puppeteer
+```
+
+## Configuring your Testing Program
+```
+mkdir actions # hold the Puppeteer scripts that will crawl your local web page
+mkdir logs # hold the results of your tests
+mkdir specs # the tests
+mkdir utils # helper files like mock credential generation
+
+npm run e2e
 ```

@@ -1,14 +1,15 @@
 
 dev() {
 docker run \
-  -it --rm \
-  --user=$(id -u):$(id -g) \
-  -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro \
-  --name=jest-puppeteer \
-  -v $(get_host_pwd)/end-to-end-test-tutorial:/app \
-  -e HOME=/tmp --workdir=/app \
-  --network=ride_network \
-  jest-puppeteer bash
+    --privileged `#make it work first, then security` \
+    -it --rm \
+    --user=$(id -u):$(id -g) \
+    -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro \
+    --name=jest-puppeteer \
+    -v $(get_host_pwd)/end-to-end-test-tutorial:/app \
+    -e HOME=/home/pptruser `# puppeteer browser is installed in this path` \
+    --network=ride_network \
+    jest-puppeteer bash
 }
 
 dev_root() {
