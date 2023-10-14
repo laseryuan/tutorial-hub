@@ -19,13 +19,13 @@ RUN if ! [ "$UID" -eq 1000 ]; then \
 # Using unencrypted password/ specifying password
 RUN "$(getent passwd ${UID} | cut -d: -f1):${PW}" | chpasswd
 
-# Change owner of pptruser home folder to USER
-# https://pptr.dev/guides/configuration
-RUN \
-    chown -R $USER:$USER /home/pptruser
-
-# Set the working directory inside the container
+ENV HOME=/home/$USER
+WORKDIR /home/$USER
 USER ${UID}:${GID}
+
+RUN \
+    npm install jest puppeteer jest-puppeteer
+
 WORKDIR /app
 
 # Copy package.json and package-lock.json first to leverage Docker cache

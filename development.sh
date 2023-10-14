@@ -7,7 +7,6 @@ docker run \
     -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro \
     --name=jest-puppeteer \
     -v $(get_host_pwd)/end-to-end-test-tutorial:/app \
-    -e HOME=/home/pptruser `# puppeteer browser is installed in this path` \
     --network=ride_network \
     jest-puppeteer bash
 }
