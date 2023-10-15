@@ -1,9 +1,7 @@
 # Use the official Node.js base image
-FROM ghcr.io/puppeteer/puppeteer
+FROM node:18
 
 ARG USER=node
-
-USER root
 
 # node image default node user id is 1000
 ARG UID=1000
@@ -19,12 +17,23 @@ RUN if ! [ "$UID" -eq 1000 ]; then \
 # Using unencrypted password/ specifying password
 RUN "$(getent passwd ${UID} | cut -d: -f1):${PW}" | chpasswd
 
+# Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
+# Note: this installs the necessary libs to make the bundled version of Chrome that Puppeteer
+# installs, work.
+RUN apt-get update \
+    && apt-get install -y wget gnupg \
+    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg \
+    && sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrome-linux-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-khmeros fonts-kacst fonts-freefont-ttf libxss1 dbus dbus-x11 \
+      --no-install-recommends \
+    && service dbus start \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV HOME=/home/$USER
 WORKDIR /home/$USER
-USER ${UID}:${GID}
 
-RUN \
-    npm install jest puppeteer jest-puppeteer
+USER ${UID}:${GID}
 
 WORKDIR /app
 
