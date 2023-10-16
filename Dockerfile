@@ -30,6 +30,18 @@ RUN apt-get update \
     && service dbus start \
     && rm -rf /var/lib/apt/lists/*
 
+# install chrome version that work with crconsole
+ENV \
+CHROME_VERSION="103.0.5060.134-1"
+
+RUN \
+wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb \
+  && apt install -y --allow-downgrades /tmp/chrome.deb \
+  && rm /tmp/chrome.deb
+
+RUN \
+npm install crconsole -g
+
 ENV HOME=/home/$USER
 WORKDIR /home/$USER
 

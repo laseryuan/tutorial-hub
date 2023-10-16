@@ -11,6 +11,10 @@ docker run \
     jest-puppeteer bash
 }
 
+chrome() {
+google-chrome --headless --remote-debugging-port=9222 --remote-debugging-address=0.0.0.0 --no-sandbox
+}
+
 dev_root() {
 docker exec -it -u root jest-puppeteer bash
 }
