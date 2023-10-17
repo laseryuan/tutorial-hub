@@ -1,4 +1,3 @@
-
 dev() {
 docker run \
     --privileged `#make it work first, then security` \
@@ -6,7 +5,8 @@ docker run \
     --user=$(id -u):$(id -g) \
     -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro \
     --name=jest-puppeteer \
-    -v $(get_host_pwd)/end-to-end-test-tutorial:/app \
+    -v $(get_host_pwd)/end-to-end-test-tutorial:/home/node/node_app/app \
+    -v $(get_host_pwd)/tmp/:/apptmp/ \
     --network=ride_network \
     jest-puppeteer bash
 }

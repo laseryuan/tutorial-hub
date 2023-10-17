@@ -5,7 +5,7 @@ https://www.digitalocean.com/community/tutorials/how-to-write-end-to-end-tests-i
 mkdir end-to-end-test-tutorial
 dev
 npm -y init
-npm install --save-dev jest-puppeteer puppeteer jest
+npm install --save-dev jest-puppeteer puppeteer jest locus
 ```
 
 ## Configuring your Testing Program
