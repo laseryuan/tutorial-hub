@@ -25,3 +25,8 @@ npm install -g live-server
 cd mock-auth
 live-server
 ```
+
+## Testing Account Creation
+```
+node inspect `which jest` --runInBand
+```

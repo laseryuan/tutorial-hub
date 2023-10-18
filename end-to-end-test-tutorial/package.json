@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "e2e": "jest --watchAll"
+    "e2e": "jest --watchAll",
+    "dev": "node inspect `which jest` --runInBand"
   },
   "keywords": [],
   "author": "",
