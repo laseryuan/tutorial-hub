@@ -43,22 +43,26 @@ RUN \
 npm install crconsole -g
 
 ENV HOME=/home/$USER
-WORKDIR /home/$USER
 
 USER ${UID}:${GID}
 
-WORKDIR /app
+# Install node modules in parent directory
+WORKDIR /home/$USER/node_app
 
 # Copy package.json and package-lock.json first to leverage Docker cache
-COPY --chown=${UID}:${GID} end-to-end-test-tutorial/package*.json /app/
+COPY --chown=${UID}:${GID} end-to-end-test-tutorial/package*.json ./
 
 # Install the application's dependencies inside the container
-RUN npm install
+RUN \
+npm install --no-optional && npm cache clean --force
 
+ENV PATH=/home/$USER/node_app/node_modules/.bin:$PATH
+
+WORKDIR /home/$USER/node_app/app
 # Copy the rest of the application code into the container
-COPY --chown=${UID}:${GID} end-to-end-test-tutorial /app
+COPY --chown=${UID}:${GID} end-to-end-test-tutorial .
 
-WORKDIR /app
+# WORKDIR /app
 
 # Specify the command to run your application
 CMD [ "node", "server.js" ]

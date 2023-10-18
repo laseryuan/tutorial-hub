@@ -6,6 +6,8 @@ docker run \
     -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro \
     --name=jest-puppeteer \
     -v $(get_host_pwd)/end-to-end-test-tutorial:/home/node/node_app/app \
+    -v $(get_host_pwd)/end-to-end-test-tutorial/package.json:/home/node/node_app/package.json \
+    -v $(get_host_pwd)/end-to-end-test-tutorial/package-lock.json:/home/node/node_app/package-lock.json \
     -v $(get_host_pwd)/tmp/:/apptmp/ \
     --network=ride_network \
     jest-puppeteer bash
