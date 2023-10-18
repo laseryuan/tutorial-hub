@@ -39,9 +39,6 @@ wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool
   && apt install -y --allow-downgrades /tmp/chrome.deb \
   && rm /tmp/chrome.deb
 
-RUN \
-npm install crconsole -g
-
 ENV HOME=/home/$USER
 
 USER ${UID}:${GID}
@@ -55,6 +52,7 @@ COPY --chown=${UID}:${GID} end-to-end-test-tutorial/package*.json ./
 # Install the application's dependencies inside the container
 RUN \
 npm install locus && \
+npm install crconsole && \
 npm install --no-optional && npm cache clean --force
 
 ENV PATH=/home/$USER/node_app/node_modules/.bin:$PATH
