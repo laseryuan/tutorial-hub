@@ -17,3 +17,11 @@ mkdir utils # helper files like mock credential generation
 
 npm run e2e
 ```
+
+## Running the Sample Web Interface
+```
+git clone https://github.com/do-community/mock-auth.git
+npm install -g live-server
+cd mock-auth
+live-server
+```

@@ -51,8 +51,7 @@ COPY --chown=${UID}:${GID} end-to-end-test-tutorial/package*.json ./
 
 # Install the application's dependencies inside the container
 RUN \
-npm install locus && \
-npm install crconsole && \
+npm install locus crconsole live-server && \
 npm install --no-optional && npm cache clean --force
 
 ENV PATH=/home/$USER/node_app/node_modules/.bin:$PATH
